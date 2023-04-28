@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import loginPage from '../components/loginPage.vue'
 import homePage from '../components/homePage.vue'
+import welcomePage from '../components/welcomePage.vue'
+import userPage from '../components/user/userPage.vue'
 
 Vue.use(VueRouter)
 
@@ -9,9 +11,19 @@ const routes = [
   //默认访问login页面,重定向.
   {path: '/', redirect:'/login'},
   // 设置路由 , 路径和对应的组件
-  {path:'/login', name: 'loginPage',component:loginPage},
-  {path:'/home', name: 'homePage',component:homePage}
+  {path:'/login', component:loginPage},
+  {
+    path:'/home', 
+    name: 'homePage',
+    component:homePage,
+    redirect:'/welcomePage',
+    children:[
+      { path:'/welcomePage', component:welcomePage },
+      { path:'/users', component:userPage },
+    ]
+  }
 ]
+
 const router = new VueRouter({ routes })
 
 router.beforeEach((to,form,next)=>{
