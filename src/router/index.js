@@ -4,6 +4,8 @@ import loginPage from '../components/loginPage.vue'
 import homePage from '../components/homePage.vue'
 import welcomePage from '../components/welcomePage.vue'
 import userPage from '../components/user/userPage.vue'
+import rightsPage from '../components/power/rightsPage.vue'
+import rolesPage from '../components/power/rolesPage.vue'
 
 Vue.use(VueRouter)
 
@@ -20,6 +22,8 @@ const routes = [
     children:[
       { path:'/welcomePage', component:welcomePage },
       { path:'/users', component:userPage },
+      { path:'/rights', component:rightsPage },
+      { path:'/roles', component:rolesPage },
     ]
   }
 ]

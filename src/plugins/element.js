@@ -25,6 +25,7 @@ import {
     Pagination,
     Dialog,
     MessageBox,
+    Tag,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -50,6 +51,7 @@ Vue.use(Switch)
 Vue.use(Tooltip)
 Vue.use(Pagination)
 Vue.use(Dialog)
+Vue.use(Tag)
 
 /**
  * $message , $后面的名称自取，见名知意即可。
